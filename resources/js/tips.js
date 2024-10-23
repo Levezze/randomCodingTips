@@ -113,4 +113,4 @@ const codingTips = {
 }
 
 // Export Module (CommonJS)
-module.exports = codingTips;
+// module.exports = codingTips; // This is for Node.JS only
