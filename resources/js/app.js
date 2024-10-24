@@ -1,3 +1,4 @@
+// import { codingTips } from './tips.json' 
 const generateTip = () => {
     // Import Tips (CommonJS)
     // const codingTips = require('./tips.js') // This is for Node.JS only
@@ -22,4 +23,14 @@ const generateTip = () => {
     return output;
 };
 
-console.log(generateTip());
+// Fetch the JSON file and pass the data to the "displayCodingTips" function
+fetch('./codingTips.json')
+    .then(response => response.json()) // Parse the JSON data
+    .then(data => {
+        displayCodingTips(data); // Call the function with JSON data
+    })
+    .catch(error => {
+        console.error('Error loading the JSON data:', error);
+    });
+
+// console.log(generateTip());

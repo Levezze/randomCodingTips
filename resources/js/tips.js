@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const codingTips = {
     HTML: {
         "Structure & Semantics": [
@@ -112,5 +114,16 @@ const codingTips = {
     }
 }
 
+// Convert Var to JSON
+const jsonData = JSON.stringify(codingTips, null, 2); // 2 spaces for indentation
+
+// Write JSON File
+fs.writeFile('codingTips.json', jsonData, (err) => {
+    if (err) {
+      console.error('Error writing file:', err);
+    } else {
+      console.log('Data written to output.json');
+    }
+  });
 // Export Module (CommonJS)
 // module.exports = codingTips; // This is for Node.JS only
